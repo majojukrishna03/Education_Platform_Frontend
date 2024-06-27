@@ -13,6 +13,9 @@ const Home = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/programs">Programs</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            {/* Add new li elements for Register and Login */}
+            <li><Link to="/register">Register</Link></li>
+            <li><Link to="/login">Login</Link></li>
           </ul>
         </nav>
       </header>
@@ -20,7 +23,10 @@ const Home = () => {
         <div className="hero-content">
           <h2>Welcome to the Education Platform</h2>
           <p>Discover our online programs and apply now!</p>
-          {/* <Link to="/programs" className="cta-button">View Programs</Link> */}
+          <div className="cta-buttons">
+            <Link to="/register" className="cta-button">Register</Link>
+            <Link to="/login" className="cta-button">Login</Link>
+          </div>
         </div>
       </main>
       <footer className="footer">
