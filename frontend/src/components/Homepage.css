@@ -74,6 +74,12 @@ body {
     margin-bottom: 30px;
   }
   
+  .cta-buttons {
+    margin-top: 20px; /* Add margin-top to create space */
+    display: flex;
+    justify-content: center;
+  }
+  
   .cta-button {
     font-size: 1.2em;
     color: #007bff;
@@ -84,6 +90,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 10px; /* Add margin between buttons */
   }
   
   .cta-button:hover {
