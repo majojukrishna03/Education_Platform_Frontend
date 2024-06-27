@@ -1,4 +1,4 @@
-// src/components/Home.js
+// frontend/src/components/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
@@ -13,7 +13,6 @@ const Home = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/programs">Programs</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            {/* Add new li elements for Register and Login */}
             <li><Link to="/register">Register</Link></li>
             <li><Link to="/login">Login</Link></li>
           </ul>
