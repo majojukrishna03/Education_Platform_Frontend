@@ -6,6 +6,7 @@ import Homepage from './components/Homepage';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import AdminHome from './components/AdminHomepage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin/home" element={<AdminHome />} />
         {/* Add an admin route if needed */}
       </Routes>
     </Router>
