@@ -11,6 +11,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
     // Validate password match
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
@@ -40,7 +41,7 @@ const Register = () => {
         // Registration successful alert
         alert('Registration successful!');
         // Redirect to home page or another route
-        window.location.href = '/';
+        window.location.href = '/home';
       } else {
         alert('Registration failed. Please try again.');
       }
