@@ -45,7 +45,7 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
             <ul className="nav-links">
               {showLogout && (
                 <li>
-                  <Link to="/admin/logout" onClick={handleLogoutClick}>Logout</Link>
+                  <Link to="/" onClick={handleLogoutClick}>Logout</Link>
                 </li>
               )}
             </ul>
