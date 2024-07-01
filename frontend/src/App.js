@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard';
 import AdminHome from './components/AdminHomepage';
 import AdminRegister from './components/AdminRegister';
 import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/admin/home" element={<AdminHome />} />
         <Route path="/admin/register" element={<AdminRegister />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         {/* Add an admin route if needed */}
       </Routes>
     </Router>

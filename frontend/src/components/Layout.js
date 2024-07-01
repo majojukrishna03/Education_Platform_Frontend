@@ -1,10 +1,10 @@
-// Layout.js
+// UserLayout.js
 
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import './Homepage.css';
+import './Homepage.css'; // Import your CSS file for styling
 
-const Layout = ({ children, showLogout, handleLogout }) => {
+const UserLayout = ({ children, showLogout, handleLogout }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -64,7 +64,6 @@ const Layout = ({ children, showLogout, handleLogout }) => {
                       Programs
                     </Link>
                   </li>
-                  
                   {showLogout && (
                     <li>
                       <Link to="/" onClick={handleLogoutClick}>Logout</Link>
@@ -106,4 +105,4 @@ const Layout = ({ children, showLogout, handleLogout }) => {
   );
 };
 
-export default Layout;
+export default UserLayout;
