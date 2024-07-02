@@ -10,6 +10,7 @@ import AdminHome from './components/AdminHomepage';
 import AdminRegister from './components/AdminRegister';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
+import CreateCourse from './components/CreateCourse';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/admin/register" element={<AdminRegister />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/dashboard/create-course" element={<CreateCourse />} />
         {/* Add an admin route if needed */}
       </Routes>
     </Router>
