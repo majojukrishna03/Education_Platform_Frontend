@@ -1,0 +1,38 @@
+.programs-container {
+    padding: 20px;
+  }
+  
+  .program {
+    margin-bottom: 30px;
+  }
+  
+  .courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .course-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+  }
+  
+  .course-card h4 {
+    margin: 10px 0;
+  }
+  
+  .course-card img {
+    width: 100%; /* Fill the width of the container */
+    border-radius: 10px 10px 0 0; /* Round top corners */
+  }
+  
+  .enroll-button {
+    align-items: center;
+    margin: 0 auto 10px; /* Center align horizontally and add bottom margin */
+    padding: 5px;
+  }
