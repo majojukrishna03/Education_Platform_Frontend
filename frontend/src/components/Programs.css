@@ -1,5 +1,8 @@
+/* Existing CSS */
+
 .programs-container {
     padding: 20px;
+    text-align: center;
   }
   
   .program {
@@ -35,4 +38,49 @@
     align-items: center;
     margin: 0 auto 10px; /* Center align horizontally and add bottom margin */
     padding: 5px;
+  }
+  
+  /* Search Bar and Filter Styles */
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    text-align: right;
+  }
+  
+  .search-bar input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    max-width: 100%; /* Ensure input doesn't overflow */
+  }
+  
+  /* New styles for filters */
+  .duration-filter select,
+  .date-filter select,
+  .program-filter select {
+    padding: 12px 16px; /* Increased padding for larger size */
+    font-size: 16px; /* Maintain font size */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    margin-left: 10px; /* Adjust margin for spacing */
+  }
+  
+  /* New styles for filters */
+.filters select {
+    padding: 12px 16px; /* Increased padding for larger size */
+    font-size: 16px; /* Maintain font size */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    margin-left: 10px; /* Adjust margin for spacing */
   }
