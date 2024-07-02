@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import UserLayout from './Layout'; // Import your UserLayout component
 import './Enrollment.css'; // Import your custom CSS file for styling
 
 function EnrollmentForm() {
   const { courseId } = useParams(); // Access courseId from URL parameters
+  const navigate = useNavigate(); // Initialize useNavigate hook
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -53,6 +54,14 @@ function EnrollmentForm() {
   
       console.log('Form data submitted successfully');
       setFormSubmitted(true);
+  
+      // Show success alert
+      alert('Form submitted successfully!');
+  
+      // Redirect to the user dashboard page after a delay
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 1000);
     } catch (error) {
       console.error('Error submitting form data:', error);
     }
