@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import InitialPage from './components/Initialpage';
@@ -12,6 +11,7 @@ import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import CreateCourse from './components/CreateCourse';
 import Programs from './components/Programs';
+import EnrollmentForm from './components/Enrollment'; // Import the EnrollmentForm component
 
 const App = () => {
   return (
@@ -22,7 +22,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/programs" element={<Programs/>}/>
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/enroll/:courseId" element={<EnrollmentForm />} /> {/* Route for EnrollmentForm with courseId parameter */}
         <Route path="/admin/home" element={<AdminHome />} />
         <Route path="/admin/register" element={<AdminRegister />} />
         <Route path="/admin/login" element={<AdminLogin />} />
