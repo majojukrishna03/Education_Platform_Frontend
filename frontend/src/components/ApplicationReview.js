@@ -60,7 +60,7 @@ const ApplicationReview = () => {
       }
   
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/dashboard/applications/${selectedApplication.applicationnumber}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/dashboard/applications/${selectedApplication.applicationnumber}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const ApplicationReview = () => {
       }
   
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/admin/dashboard/applications/${selectedApplication.applicationnumber}`, {
+      const response = await fetch(`http://localhost:5000/api/admin/dashboard/applications/${selectedApplication.applicationnumber}/deny`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -200,6 +200,10 @@ const ApplicationReview = () => {
                     <tr>
                       <td><strong>Qualification:</strong></td>
                       <td>{selectedApplication.qualification}, {selectedApplication.degreetype}, {selectedApplication.qualificationscore}</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Course: </strong></td>
+                      <td>{selectedApplication.courseid}, {selectedApplication.coursename}</td>
                     </tr>
                     <tr>
                       <td><strong>Statement of purpose:</strong></td>
