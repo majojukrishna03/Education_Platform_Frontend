@@ -39,9 +39,6 @@ const TrackApplication = () => {
           />
           <div className="button-group">
             <button type="submit" className="track-button">Track</button>
-            <Link to="/dashboard">
-              <button type="button" className="dashboard-button">Dashboard</button>
-            </Link>
           </div>
         </form>
         {applicationStatus && <p className="status-message">{applicationStatus}</p>}
