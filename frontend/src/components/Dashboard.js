@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link, useLocation, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
-import TrackApplication from './TrackApplication';
-// import ManageCourses from './ManageCourses';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -49,7 +47,6 @@ const Dashboard = () => {
           <p>{message}</p>
           <div className="dashboard-links">
             <Link to="/dashboard/track-application">Track Application</Link><br />
-            <Link to="/dashboard/manage-courses">Manage Enrolled Courses</Link>
           </div>
           <button onClick={handleLogout}>Logout</button>
         </div>
