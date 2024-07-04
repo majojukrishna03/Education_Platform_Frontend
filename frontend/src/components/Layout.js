@@ -1,5 +1,3 @@
-// UserLayout.js
-
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Homepage.css'; // Import your CSS file for styling
@@ -31,66 +29,60 @@ const UserLayout = ({ children, showLogout, handleLogout }) => {
       <header className="header">
         <nav className="navbar">
           <h1 className="brand">Education Platform</h1>
-          {!isRegisterPage() && !isLoginPage() && (
-            <ul className="nav-links">
-              {isHomePage() && (
-                <>
+          <ul className="nav-links">
+            {isHomePage() && (
+              <>
+                <li>
+                  <Link to="/programs" onClick={() => handleLinkClick('Programs')}>
+                    Programs
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" onClick={() => handleLinkClick('Contact')}>
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register" onClick={() => handleLinkClick('Register')}>
+                    Register
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login" onClick={() => handleLinkClick('Login')}>
+                    Login
+                  </Link>
+                </li>
+              </>
+            )}
+            {(isHomePage() || isDashboardPage() || (!isRegisterPage() && !isLoginPage())) && (
+              <li>
+                <Link to="/dashboard" onClick={() => handleLinkClick('Dashboard')}>
+                  Dashboard
+                </Link>
+              </li>
+            )}
+            {isDashboardPage() && (
+              <>
+                <li>
+                  <Link to="/programs" onClick={() => handleLinkClick('Programs')}>
+                    Programs
+                  </Link>
+                </li>
+                {showLogout && (
                   <li>
-                    <Link to="/programs" onClick={() => handleLinkClick('Programs')}>
-                      Programs
-                    </Link>
+                    <Link to="/" onClick={handleLogoutClick}>Logout</Link>
                   </li>
-                  <li>
-                    <Link to="/contact" onClick={() => handleLinkClick('Contact')}>
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/register" onClick={() => handleLinkClick('Register')}>
-                      Register
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/login" onClick={() => handleLinkClick('Login')}>
-                      Login
-                    </Link>
-                  </li>
-                </>
-              )}
-              {isDashboardPage() && (
-                <>
-                  <li>
-                    <Link to="/programs" onClick={() => handleLinkClick('Programs')}>
-                      Programs
-                    </Link>
-                  </li>
-                  {showLogout && (
-                    <li>
-                      <Link to="/" onClick={handleLogoutClick}>Logout</Link>
-                    </li>
-                  )}
-                </>
-              )}
-            </ul>
-          )}
-          {isRegisterPage() && (
-            <ul className="nav-links">
+                )}
+              </>
+            )}
+            {(isRegisterPage() || isLoginPage()) && (
               <li>
                 <Link to="/" onClick={() => handleLinkClick('Home')}>
                   Home
                 </Link>
               </li>
-            </ul>
-          )}
-          {isLoginPage() && (
-            <ul className="nav-links">
-              <li>
-                <Link to="/" onClick={() => handleLinkClick('Home')}>
-                  Home
-                </Link>
-              </li>
-            </ul>
-          )}
+            )}
+          </ul>
         </nav>
       </header>
       <main>
