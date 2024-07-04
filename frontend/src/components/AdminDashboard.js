@@ -23,12 +23,6 @@ const AdminDashboard = () => {
               Go to the application review section
             </Link>
           </div>
-          <div className="dashboard-section">
-            <h2>Manage Courses</h2>
-            <Link to="/admin/dashboard/manage-courses" className="dashboard-link">
-              Go to the manage courses section
-            </Link>
-          </div>
         </div>
       </div>
     </AdminLayout>
