@@ -13,6 +13,7 @@ import CreateCourse from './components/CreateCourse';
 import Programs from './components/Programs';
 import EnrollmentForm from './components/Enrollment'; // Import the EnrollmentForm component
 import TrackApplication from './components/TrackApplication'; // Import TrackApplication component
+import ApplicationReview from './components/ApplicationReview';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/dashboard/create-course" element={<CreateCourse />} />
+        <Route path="/admin/dashboard/application-review" element={<ApplicationReview/>}/>
         {/* Add an admin route if needed */}
       </Routes>
     </Router>
