@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from './Layout'; // Import the Layout component
+import Userlayout from './Layout'; // Import the Layout component
 import './Register.css'; // Import the new CSS file for registration page
 
 const Register = () => {
@@ -51,7 +51,7 @@ const Register = () => {
   };
 
   return (
-    <Layout>
+    <Userlayout>
       <div className="registration-container">
         <div className="registration-card">
           <h2>Registration Form</h2>
@@ -105,7 +105,7 @@ const Register = () => {
           </form>
         </div>
       </div>
-    </Layout>
+    </Userlayout>
   );
 };
 
