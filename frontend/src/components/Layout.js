@@ -68,11 +68,6 @@ const UserLayout = ({ children, showLogout, handleLogout }) => {
                     Programs
                   </Link>
                 </li>
-                {showLogout && (
-                  <li>
-                    <Link to="/" onClick={handleLogoutClick}>Logout</Link>
-                  </li>
-                )}
               </>
             )}
             {(isRegisterPage() || isLoginPage()) && (
@@ -80,6 +75,11 @@ const UserLayout = ({ children, showLogout, handleLogout }) => {
                 <Link to="/" onClick={() => handleLinkClick('Home')}>
                   Home
                 </Link>
+              </li>
+            )}
+            {showLogout && (
+              <li>
+                <Link to="/" onClick={handleLogoutClick}>Logout</Link>
               </li>
             )}
           </ul>
