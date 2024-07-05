@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Userlayout from './Layout';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -35,7 +36,7 @@ const Login = () => {
   };
 
   return (
-    <Userlayout>
+    <UserLayout>
       <div className="registration-container">
         <div className="registration-card">
           <h2>Login Form</h2>
@@ -55,7 +56,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-    </Userlayout>
+    </UserLayout>
   );
 };
 
