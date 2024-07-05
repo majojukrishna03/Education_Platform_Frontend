@@ -14,6 +14,7 @@ import Programs from './components/Programs';
 import EnrollmentForm from './components/Enrollment'; // Import the EnrollmentForm component
 import TrackApplication from './components/TrackApplication'; // Import TrackApplication component
 import ApplicationReview from './components/ApplicationReview';
+import PaymentPage from './components/PaymentPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path='/dashboard/track-application' element={<TrackApplication/>}/>
+        <Route path='/dashboard/track-application/make-payment/:applicationId' element={<PaymentPage/>}/>
         <Route path="/programs" element={<Programs />} />
         <Route path="/enroll/:courseId" element={<EnrollmentForm />} /> {/* Route for EnrollmentForm with courseId parameter */}
         <Route path="/admin/home" element={<AdminHome />} />

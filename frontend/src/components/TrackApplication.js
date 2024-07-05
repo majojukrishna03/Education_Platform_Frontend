@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserLayout from './Layout';
 import './TrackApplication.css'; // Import the CSS file
 
@@ -40,7 +41,12 @@ const TrackApplication = () => {
             <button type="submit" className="track-button">Track</button>
           </div>
         </form>
-        {applicationStatus && <p className="status-message">{applicationStatus}</p>}
+        {applicationStatus && <p className="status-message">Status: {applicationStatus}</p>}
+        {applicationStatus === 'approved' && (
+          <div className="payment-link">
+            <Link to={`/dashboard/track-application/make-payment/${applicationId}`}>Make Payment</Link>
+          </div>
+        )}
       </div>
     </UserLayout>
   );
