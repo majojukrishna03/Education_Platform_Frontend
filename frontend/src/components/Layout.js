@@ -77,6 +77,11 @@ const UserLayout = ({ children, showLogout, handleLogout }) => {
                 </Link>
               </li>
             )}
+            {showLogout && (
+              <li>
+                <Link to="/" onClick={handleLogoutClick}>Logout</Link>
+              </li>
+            )}
           </ul>
         </nav>
       </header>
