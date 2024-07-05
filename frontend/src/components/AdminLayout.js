@@ -1,5 +1,3 @@
-// AdminLayout.js
-
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Homepage.css'; // Import your CSS file for styling
@@ -8,9 +6,8 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Function to determine current route
-  const isAdminHomePage = () => location.pathname === '/admin';
-  const isAdminDashboardPage = () => location.pathname === '/admin/dashboard';
+  // Function to determine if the current route is an admin route
+  const isAdminRoute = () => location.pathname.startsWith('/admin');
 
   // Function to handle link clicks with alert
   const handleLinkClick = (pageName) => {
@@ -29,25 +26,14 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
       <header className="header">
         <nav className="navbar">
           <h1 className="brand">Education Platform</h1>
-          {isAdminHomePage() && (
+          {isAdminRoute() && (
             <ul className="nav-links">
               <li>
-                <Link to="/admin/dashboard">Dashboard</Link>
+                <Link to="/admin/dashboard" onClick={() => handleLinkClick('Dashboard')}>Dashboard</Link>
               </li>
-              {showLogout && (
-                <li>
-                  <Link to="/" onClick={handleLogoutClick}>Logout</Link>
-                </li>
-              )}
-            </ul>
-          )}
-          {isAdminDashboardPage() && (
-            <ul className="nav-links">
-              {showLogout && (
-                <li>
-                  <Link to="/" onClick={handleLogoutClick}>Logout</Link>
-                </li>
-              )}
+              <li>
+                <Link to="/" onClick={handleLogoutClick}>Logout</Link>
+              </li>
             </ul>
           )}
         </nav>

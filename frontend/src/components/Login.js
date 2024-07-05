@@ -1,7 +1,8 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import UserLayout from './Layout';
+import Userlayout from './Layout';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');

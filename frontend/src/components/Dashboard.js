@@ -1,5 +1,3 @@
-// Dashboard.js
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserLayout from './Layout';
@@ -7,7 +5,8 @@ import './Dashboard.css';
 
 const Dashboard = () => {
   const [message, setMessage] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -25,11 +24,9 @@ const Dashboard = () => {
           setMessage(data.message);
         } else {
           console.error('Error fetching dashboard data:', response.statusText);
-          // Handle non-successful response
         }
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
-        // Handle fetch error
       }
     };
 
@@ -37,9 +34,9 @@ const Dashboard = () => {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Clear token from local storage
+    localStorage.removeItem('token');
     alert('Logout successful');
-    navigate('/', { replace: true }); // Redirect to home page after logout
+    navigate('/', { replace: true });
   };
 
   return (
@@ -48,6 +45,9 @@ const Dashboard = () => {
         <div className="dashboard-card">
           <h2>Dashboard</h2>
           <p>{message}</p>
+          <div className="dashboard-links">
+            <Link to="/dashboard/track-application">Track Application</Link><br />
+          </div>
           <button onClick={handleLogout}>Logout</button>
         </div>
       </div>
