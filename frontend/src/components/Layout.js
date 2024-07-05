@@ -68,11 +68,6 @@ const UserLayout = ({ children, showLogout, handleLogout }) => {
                     Programs
                   </Link>
                 </li>
-                {showLogout && (
-                  <li>
-                    <Link to="/" onClick={handleLogoutClick}>Logout</Link>
-                  </li>
-                )}
               </>
             )}
             {(isRegisterPage() || isLoginPage()) && (
