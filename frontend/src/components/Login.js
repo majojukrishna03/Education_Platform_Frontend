@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   return (
-    <UserLayout>
+    <Userlayout>
       <div className="registration-container">
         <div className="registration-card">
           <h2>Login Form</h2>
@@ -56,7 +56,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-    </UserLayout>
+    </Userlayout>
   );
 };
 
