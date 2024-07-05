@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, Link, useLocation, Routes, Route } from 'react-router-dom';
-import Layout from './Layout';
-import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
+import Userlayout from './Layout';
 
 const Dashboard = () => {
   const [message, setMessage] = useState('');
@@ -40,7 +39,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Layout>
+    <Userlayout>
       <div className="dashboard-container">
         <div className="dashboard-card">
           <h2>Dashboard</h2>
@@ -51,7 +50,7 @@ const Dashboard = () => {
           <button onClick={handleLogout}>Logout</button>
         </div>
       </div>
-    </Layout>
+    </Userlayout>
   );
 };
 
