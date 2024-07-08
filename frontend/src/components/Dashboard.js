@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate,useLocation,Link} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import UserLayout from './Layout';
 import './Dashboard.css';
 
 const Dashboard = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const fetchDashboardData = async () => {
