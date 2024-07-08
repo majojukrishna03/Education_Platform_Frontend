@@ -76,6 +76,7 @@ const UserLayout = ({ children, showLogout, handleLogout }) => {
                   Home
                 </Link>
               </li>
+
             )}
             {showLogout && (
               <li>
