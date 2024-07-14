@@ -1,7 +1,7 @@
 // src/components/AdminLogin.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Layout from './Layout';
+import AdminLayout from './AdminLayout';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <Layout>
+    <AdminLayout>
       <div className="registration-container">
         <div className="registration-card">
           <h2>Admin Login Form</h2>
@@ -55,7 +55,7 @@ const AdminLogin = () => {
           </p>
         </div>
       </div>
-    </Layout>
+    </AdminLayout>
   );
 };
 
