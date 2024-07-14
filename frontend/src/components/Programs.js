@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UserLayout from './Layout';
+import Userlayout from './Layout';
 import './Programs.css';
 import { format, isValid } from 'date-fns';
 
@@ -68,7 +68,7 @@ const Programs = () => {
   }
 
   return (
-    <UserLayout>
+    <Userlayout>
       <div className="programs-container">
         <h2>Programs</h2>
 
@@ -145,7 +145,7 @@ const Programs = () => {
           </div>
         ))}
       </div>
-    </UserLayout>
+    </Userlayout>
   );
 };
 
