@@ -7,7 +7,7 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
   const navigate = useNavigate();
 
   // Function to determine if the current route is an admin route
-  const isAdminRoute = () => location.pathname.startsWith('/admin');
+  const isAdminRoute = () => location.pathname.startsWith('/admin/dashboard');
 
   // Function to handle link clicks with alert
   const handleLinkClick = (pageName) => {
