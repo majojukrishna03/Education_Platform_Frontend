@@ -10,7 +10,7 @@ const AdminHome = () => {
         <nav className="navbar">
           <h1 className="brand">Admin Portal</h1>
           <ul className="nav-links">
-            <li><Link to="/admin/home">Home</Link></li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/admin/register">Register</Link></li>
             <li><Link to="/admin/login">Login</Link></li>
           </ul>
