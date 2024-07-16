@@ -1,6 +1,6 @@
 // src/components/AdminRegister.js
 import React, { useState } from 'react';
-import Layout from './Layout'; // Reuse the Layout component
+import AdminLayout from './AdminLayout';
 import './Register.css'; // Reuse the CSS file for registration page
 
 const AdminRegister = () => {
@@ -49,7 +49,7 @@ const AdminRegister = () => {
   };
 
   return (
-    <Layout>
+    <AdminLayout>
       <div className="registration-container">
         <div className="registration-card">
           <h2>Admin Registration Form</h2>
@@ -102,7 +102,7 @@ const AdminRegister = () => {
           </form>
         </div>
       </div>
-    </Layout>
+    </AdminLayout>
   );
 };
 

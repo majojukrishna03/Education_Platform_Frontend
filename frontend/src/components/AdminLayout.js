@@ -7,7 +7,7 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
   const navigate = useNavigate();
 
   // Function to determine if the current route is an admin route
-  const isAdminRoute = () => location.pathname.startsWith('/admin');
+  const isAdminRoute = () => location.pathname.startsWith('/admin/dashboard');
 
   // Function to handle link clicks with alert
   const handleLinkClick = (pageName) => {
@@ -17,7 +17,8 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
   // Function to handle logout
   const handleLogoutClick = () => {
     handleLogout(); // Perform logout actions (clear token, etc.)
-    alert('Redirecting to home page.');
+    localStorage.removeItem('token');
+    alert('Logout successful');
     navigate('/'); // Redirect to home page using navigate
   };
 
