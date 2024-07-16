@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Userlayout from './Layout';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');

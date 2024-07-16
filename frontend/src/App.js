@@ -11,9 +11,11 @@ import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import CreateCourse from './components/CreateCourse';
 import Programs from './components/Programs';
-import EnrollmentForm from './components/Enrollment'; // Import the EnrollmentForm component
-import TrackApplication from './components/TrackApplication'; // Import TrackApplication component
+import EnrollmentForm from './components/Enrollment';
+import TrackApplication from './components/TrackApplication';
 import ApplicationReview from './components/ApplicationReview';
+import PaymentPage from './components/PaymentPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   return (
@@ -23,17 +25,17 @@ const App = () => {
         <Route path="/home" element={<Homepage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path='/dashboard/track-application' element={<TrackApplication/>}/>
-        <Route path="/programs" element={<Programs />} />
-        <Route path="/enroll/:courseId" element={<EnrollmentForm />} /> {/* Route for EnrollmentForm with courseId parameter */}
+        <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
+        <Route path='/dashboard/track-application' element={<ProtectedRoute element={<TrackApplication />} />} />
+        <Route path='/dashboard/track-application/make-payment/:applicationId' element={<ProtectedRoute element={<PaymentPage />} />} />
+        <Route path="/programs" element={<ProtectedRoute element={<Programs />} />} />
+        <Route path="/enroll/:courseId" element={<ProtectedRoute element={<EnrollmentForm />} />} />
         <Route path="/admin/home" element={<AdminHome />} />
         <Route path="/admin/register" element={<AdminRegister />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/dashboard/create-course" element={<CreateCourse />} />
-        <Route path="/admin/dashboard/application-review" element={<ApplicationReview/>}/>
-        {/* Add an admin route if needed */}
+        <Route path="/admin/dashboard" element={<ProtectedRoute element={<AdminDashboard />} />} />
+        <Route path="/admin/dashboard/create-course" element={<ProtectedRoute element={<CreateCourse />} />} />
+        <Route path="/admin/dashboard/application-review" element={<ProtectedRoute element={<ApplicationReview />} />} />
       </Routes>
     </Router>
   );
