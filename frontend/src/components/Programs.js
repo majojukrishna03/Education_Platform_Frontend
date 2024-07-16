@@ -132,27 +132,29 @@ const Programs = () => {
           {Object.keys(filteredCourses).map((program) => (
             <div key={program} className="course-group">
               <h3>{program}</h3>
-              {filteredCourses[program].map((course) => (
-                <div key={course.id} className="course-card">
-                  <img src={course.image} alt={course.title} />
-                  <h4>{course.title}</h4>
-                  <p>{course.description}</p>
-                  <p className="price">Price: {course.price}</p>
-                  <p>Duration: {course.duration}</p>
-                  <p className="start-date">
-                    Start Date:{' '}
-                    {isValid(new Date(course.startdate))
-                      ? format(new Date(course.startdate), 'yyyy-MM-dd')
-                      : 'Invalid Date'}
-                  </p>
-                  <button
-                    className="enroll-button"
-                    onClick={() => handleEnrollClick(course.id)}
-                  >
-                    Enroll
-                  </button>
-                </div>
-              ))}
+              <div className="course-row">
+                {filteredCourses[program].map((course) => (
+                  <div key={course.id} className="course-card">
+                    <img src={course.image} alt={course.title} />
+                    <h4>{course.title}</h4>
+                    <p>{course.description}</p>
+                    <p className="price">Price: {course.price}</p>
+                    <p>Duration: {course.duration}</p>
+                    <p className="start-date">
+                      Start Date:{' '}
+                      {isValid(new Date(course.startdate))
+                        ? format(new Date(course.startdate), 'yyyy-MM-dd')
+                        : 'Invalid Date'}
+                    </p>
+                    <button
+                      className="enroll-button"
+                      onClick={() => handleEnrollClick(course.id)}
+                    >
+                      Enroll
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

@@ -1,5 +1,3 @@
-/* Programs.css */
-
 .programs-container {
   padding: 20px;
   text-align: center;
@@ -17,9 +15,16 @@
 }
 
 .course-group {
-  width: 100%; /* Full width for each program's course group */
-  margin-bottom: 30px; /* Space between program groups */
+  width: 100%;
 }
+
+.course-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center align courses in the row */
+}
+
 .course-card {
   border: 1px solid #ccc;
   border-radius: 10px;
