@@ -130,7 +130,7 @@ const Programs = () => {
         {/* Render filtered courses */}
         <div className="courses">
           {Object.keys(filteredCourses).map((program) => (
-            <div key={program} className="program">
+            <div key={program} className="course-group">
               <h3>{program}</h3>
               {filteredCourses[program].map((course) => (
                 <div key={course.id} className="course-card">
