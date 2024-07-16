@@ -11,6 +11,7 @@ const Programs = () => {
   const [filterDuration, setFilterDuration] = useState('');
   const [filterStartDate, setFilterStartDate] = useState('');
   const [filterProgram, setFilterProgram] = useState('');
+  const [filteredCourses, setFilteredCourses] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,6 +33,29 @@ const Programs = () => {
     fetchCourses();
   }, []);
 
+  useEffect(() => {
+    const filterCourses = () => {
+      const filtered = courses.reduce((acc, course) => {
+        const { title, duration, startdate, program } = course;
+        if (
+          title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          (filterDuration === '' || duration.toLowerCase() === filterDuration.toLowerCase()) &&
+          (filterStartDate === '' || new Date(startdate) >= new Date(filterStartDate)) &&
+          (filterProgram === '' || program.toLowerCase() === filterProgram.toLowerCase())
+        ) {
+          if (!acc[program]) {
+            acc[program] = [];
+          }
+          acc[program].push(course);
+        }
+        return acc;
+      }, {});
+      setFilteredCourses(filtered);
+    };
+
+    filterCourses();
+  }, [courses, searchQuery, filterDuration, filterStartDate, filterProgram]);
+
   const handleEnrollClick = (courseId) => {
     navigate(`/enroll/${courseId}`);
   };
@@ -51,17 +75,6 @@ const Programs = () => {
   const handleProgramChange = (event) => {
     setFilterProgram(event.target.value);
   };
-
-  // Filter courses based on search query, duration, start date, and program
-  const filteredCourses = courses.filter((course) =>
-    course.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (filterDuration === '' || course.duration.toLowerCase() === filterDuration.toLowerCase()) &&
-    (filterStartDate === '' || new Date(course.startdate) >= new Date(filterStartDate)) &&
-    (filterProgram === '' || course.program.toLowerCase() === filterProgram.toLowerCase())
-  );
-
-  // Extract unique programs from filtered courses for program filter dropdown
-  const uniquePrograms = [...new Set(courses.map((course) => course.program))];
 
   if (loading) {
     return <p>Loading...</p>;
@@ -107,7 +120,7 @@ const Programs = () => {
           <div className="filter">
             <select value={filterProgram} onChange={handleProgramChange}>
               <option value="">Filter by Program</option>
-              {uniquePrograms.map((program) => (
+              {Object.keys(filteredCourses).map((program) => (
                 <option key={program} value={program}>{program}</option>
               ))}
             </select>
@@ -116,25 +129,30 @@ const Programs = () => {
 
         {/* Render filtered courses */}
         <div className="courses">
-          {filteredCourses.map((course) => (
-            <div key={course.id} className="course-card">
-              <img src={course.image} alt={course.title} />
-              <h4>{course.title}</h4>
-              <p>{course.description}</p>
-              <p className="price">Price: {course.price}</p>
-              <p>Duration: {course.duration}</p>
-              <p className="start-date">
-                Start Date:{' '}
-                {isValid(new Date(course.startdate))
-                  ? format(new Date(course.startdate), 'yyyy-MM-dd')
-                  : 'Invalid Date'}
-              </p>
-              <button
-                className="enroll-button"
-                onClick={() => handleEnrollClick(course.id)}
-              >
-                Enroll
-              </button>
+          {Object.keys(filteredCourses).map((program) => (
+            <div key={program} className="program">
+              <h3>{program}</h3>
+              {filteredCourses[program].map((course) => (
+                <div key={course.id} className="course-card">
+                  <img src={course.image} alt={course.title} />
+                  <h4>{course.title}</h4>
+                  <p>{course.description}</p>
+                  <p className="price">Price: {course.price}</p>
+                  <p>Duration: {course.duration}</p>
+                  <p className="start-date">
+                    Start Date:{' '}
+                    {isValid(new Date(course.startdate))
+                      ? format(new Date(course.startdate), 'yyyy-MM-dd')
+                      : 'Invalid Date'}
+                  </p>
+                  <button
+                    className="enroll-button"
+                    onClick={() => handleEnrollClick(course.id)}
+                  >
+                    Enroll
+                  </button>
+                </div>
+              ))}
             </div>
           ))}
         </div>
