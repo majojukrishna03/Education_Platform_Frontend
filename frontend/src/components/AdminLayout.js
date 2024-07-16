@@ -17,7 +17,8 @@ const AdminLayout = ({ children, showLogout, handleLogout }) => {
   // Function to handle logout
   const handleLogoutClick = () => {
     handleLogout(); // Perform logout actions (clear token, etc.)
-    alert('Redirecting to home page.');
+    localStorage.removeItem('token');
+    alert('Logout successful');
     navigate('/'); // Redirect to home page using navigate
   };
 
