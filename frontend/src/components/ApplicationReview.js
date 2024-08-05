@@ -14,7 +14,7 @@ const ApplicationReview = () => {
     const fetchApplications = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://education-platform-backend.onrender.com/api/admin/dashboard/applications', {
+        const response = await fetch('http://localhost:5000/api/admin/dashboard/applications', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -61,7 +61,7 @@ const ApplicationReview = () => {
       }
   
       const token = localStorage.getItem('token');
-      const response = await fetch(`https://education-platform-backend.onrender.com/api/admin/dashboard/applications/${selectedApplication.applicationnumber}/approve`, {
+      const response = await fetch(`http://localhost:5000/api/admin/dashboard/applications/${selectedApplication.applicationnumber}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ const ApplicationReview = () => {
       }
   
       const token = localStorage.getItem('token');
-      const response = await fetch(`https://education-platform-backend.onrender.com/api/admin/dashboard/applications/${selectedApplication.applicationnumber}/deny`, {
+      const response = await fetch(`http://localhost:5000/api/admin/dashboard/applications/${selectedApplication.applicationnumber}/deny`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
