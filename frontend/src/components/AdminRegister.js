@@ -36,6 +36,7 @@ const AdminRegister = () => {
       });
 
       if (response.ok) {
+        // eslint-disable-next-line no-unused-vars
         const data = await response.json();
         alert('Registration successful!');
         window.location.href = '/admin/home';

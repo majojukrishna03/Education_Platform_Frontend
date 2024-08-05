@@ -7,6 +7,7 @@ const ApplicationReview = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedApplication, setSelectedApplication] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [allProcessed, setAllProcessed] = useState(false); // State to track if all applications are processed
 
   useEffect(() => {

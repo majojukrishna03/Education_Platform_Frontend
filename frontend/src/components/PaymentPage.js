@@ -13,6 +13,7 @@ const PaymentPage = () => {
   const [cvv, setCvv] = useState('');
   const [paymentStatus, setPaymentStatus] = useState(null);
   const [courseDetails, setCourseDetails] = useState({});
+  // eslint-disable-next-line no-unused-vars
   const [paymentSuccessful, setPaymentSuccessful] = useState(false);
 
   useEffect(() => {
