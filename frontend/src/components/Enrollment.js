@@ -41,7 +41,7 @@ function EnrollmentForm() {
   
     try {
       const formDataWithAppNumber = { ...formData, applicationNumber, courseId };
-      await fetch('http://localhost:5000/api/enroll', {
+      await fetch('https://education-platform-backend.onrender.com/api/enroll', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

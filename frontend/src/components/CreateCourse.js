@@ -26,7 +26,7 @@ const CreateCourse = () => {
 
     try {
       // Proceed with course creation
-      const response = await fetch('http://localhost:5000/api/admin/dashboard/create-course', {
+      const response = await fetch('https://education-platform-backend.onrender.com/api/admin/dashboard/create-course', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

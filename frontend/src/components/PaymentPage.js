@@ -20,7 +20,7 @@ const PaymentPage = () => {
     // Fetch course details using applicationId
     const fetchCourseDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/applications/${applicationId}/details`);
+        const response = await fetch(`https://education-platform-backend.onrender.com/api/applications/${applicationId}/details`);
         if (response.ok) {
           const data = await response.json();
           setCourseDetails(data);
@@ -48,7 +48,7 @@ const PaymentPage = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/payments', {
+      const response = await fetch('https://education-platform-backend.onrender.com/api/payments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
