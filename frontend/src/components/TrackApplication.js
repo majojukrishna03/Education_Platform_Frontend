@@ -11,7 +11,7 @@ const TrackApplication = () => {
   useEffect(() => {
     const fetchPaymentStatus = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/payments/${applicationId}`);
+        const response = await fetch(`https://education-platform-backend.vercel.app/api/payments/${applicationId}`);
         if (response.ok) {
           const data = await response.json();
           if (data.paymentDone) {
@@ -37,7 +37,7 @@ const TrackApplication = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${applicationId}`);
+      const response = await fetch(`https://education-platform-backend.vercel.app/api/applications/${applicationId}`);
       if (response.ok) {
         const data = await response.json();
         setApplicationStatus(data.status);
