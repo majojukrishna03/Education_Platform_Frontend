@@ -14,7 +14,7 @@ const AdminLogin = () => {
     const formData = { email, password };
 
     try {
-      const response = await fetch('https://education-platform-backend.vercel.app/api/admin/login', {
+      const response = await fetch('http://13.60.205.99:5000/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

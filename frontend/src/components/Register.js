@@ -27,7 +27,7 @@ const Register = () => {
 
     try {
       // Send POST request to backend API
-      const response = await fetch('https://education-platform-backend.vercel.app/api/register', {
+      const response = await fetch('http://13.60.205.99:5000/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -41,7 +41,7 @@ function EnrollmentForm() {
   
     try {
       const formDataWithAppNumber = { ...formData, applicationNumber, courseId };
-      await fetch('https://education-platform-backend.vercel.app/api/enroll', {
+      await fetch('http://13.60.205.99:5000/api/enroll', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
