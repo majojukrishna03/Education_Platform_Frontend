@@ -17,7 +17,7 @@ const Programs = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('https://education-platform-backend.vercel.app/api/courses');
+        const response = await fetch('http://13.60.205.99:5000/api/courses');
         if (!response.ok) {
           throw new Error(`Failed to fetch courses: ${response.statusText}`);
         }

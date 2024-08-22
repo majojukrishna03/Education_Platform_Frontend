@@ -10,7 +10,7 @@ const AdminHome = () => {
   useEffect(() => {
     const fetchAdminCount = async () => {
       try {
-        const response = await fetch('/api/admin-count');
+        const response = await fetch('http://13.60.205.99:5000/api/admin-count');
         if (!response.ok) {
           throw new Error(`Failed to fetch admin count: ${response.statusText}`);
         }

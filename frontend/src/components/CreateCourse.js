@@ -26,7 +26,7 @@ const CreateCourse = () => {
 
     try {
       // Proceed with course creation
-      const response = await fetch('https://education-platform-backend.vercel.app/api/admin/dashboard/create-course', {
+      const response = await fetch('http://13.60.205.99:5000/api/admin/dashboard/create-course', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

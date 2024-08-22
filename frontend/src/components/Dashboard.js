@@ -14,7 +14,7 @@ const Dashboard = () => {
 
       try {
         // Fetch dashboard data (message)
-        const response = await fetch('https://education-platform-backend.vercel.app/api/dashboard', {
+        const response = await fetch('http://13.60.205.99:5000/api/dashboard', {
           headers: {
             Authorization: token ? `Bearer ${token}` : '',
           },
@@ -28,7 +28,7 @@ const Dashboard = () => {
         }
 
         // Fetch enrolled courses from payments table
-        const enrolledCoursesResponse = await fetch('https://education-platform-backend.vercel.app/api/dashboard/enrolled-courses', {
+        const enrolledCoursesResponse = await fetch('http://13.60.205.99:5000/api/dashboard/enrolled-courses', {
           headers: {
             Authorization: token ? `Bearer ${token}` : '',
           },
